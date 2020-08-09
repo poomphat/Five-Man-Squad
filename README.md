@@ -43,6 +43,10 @@
      - array
      - boolean
      - null
+   #### JSON object  
+      - '{"name": "Kate", "pet": {"dog": "Corgi", "cat": "Persian"}}'
+   #### array 
+      - '{"name": "Jothanan", "age": 28, "car": ["Tsubaru", "Honda"]}'
 
 # ข้อดีข้อเสียเมื่อเทียบ กับ XML
 
