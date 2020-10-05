@@ -1,0 +1,937 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This is a sample server Petstore server.  You can find out more about     Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).      For this sample, you can use the api key `special-key` to test the authorization     filters.",
+    "version": "1.0.0",
+    "title": "Swagger Petstore",
+    "termsOfService": "http://swagger.io/terms/",
+    "contact": {
+      "email": "apiteam@swagger.io"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host": "petstore.swagger.io",
+  "basePath": "/v2",
+  "tags": [
+    {
+      "name": "Student",
+      "description": "Student in class",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "http://swagger.io"
+      }
+    },
+    {
+      "name": "Lecturer",
+      "description": "teacher in class",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "http://swagger.io"
+      }
+    },
+    {
+      "name": "Course",
+      "description": "class",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "http://swagger.io"
+      }
+    },
+    {
+      "name": "Grade",
+      "description": "student score",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "http://swagger.io"
+      }
+    },
+    {
+      "name": "Finance",
+      "description": "student pay debt",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "http://swagger.io"
+      }
+    },
+    {
+      "name": "Evaluation",
+      "description": "student Evaluation",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "http://swagger.io"
+      }
+    },
+    {
+      "name": "Forum",
+      "description": "Forum knowledge",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "http://swagger.io"
+      }
+    }
+  ],
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "paths": {
+    "/AddStudent": {
+      "post": {
+        "tags": [
+          "Student"
+        ],
+        "summary": "Add new Student",
+        "description": "",
+        "operationId": "addPet",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Pet object that needs to be added to the store",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Student"
+            }
+          }
+        ],
+        "responses": {
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/getStudent/{StudentID}": {
+      "get": {
+        "tags": [
+          "Student"
+        ],
+        "summary": "Get Student",
+        "description": "",
+        "operationId": "getStudent",
+        "parameters": [
+          {
+            "name": "StudentID",
+            "in": "path",
+            "description": "Returns 1 Student",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Student"
+              }
+            },
+            "description": "finish"
+          }
+        }
+      }
+    },
+    "/UpdateStudent/{StudentID}": {
+      "patch": {
+        "tags": [
+          "Student"
+        ],
+        "summary": "Update Student",
+        "description": "",
+        "operationId": "UpdateStudent",
+        "parameters": [
+          {
+            "name": "StudentID",
+            "in": "path",
+            "description": "Returns 1 Student",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Updatefinish"
+          }
+        }
+      }
+    },
+    "/DeleteStudent/{StudentID}": {
+      "delete": {
+        "tags": [
+          "Student"
+        ],
+        "summary": "Delete Student",
+        "description": "",
+        "operationId": "DeleteStudent",
+        "parameters": [
+          {
+            "name": "StudentID",
+            "in": "path",
+            "description": "Returns 1 Student",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Deletefinish"
+          }
+        }
+      }
+    },
+    "/AddLecturer": {
+      "post": {
+        "tags": [
+          "Lecturer"
+        ],
+        "summary": "Add new Lecturer",
+        "description": "",
+        "operationId": "addLecturer",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Pet object that needs to be added to the store",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Student"
+            }
+          }
+        ],
+        "responses": {
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/getLecturer/{LecturerID}": {
+      "get": {
+        "tags": [
+          "Lecturer"
+        ],
+        "summary": "Get Lecturer",
+        "description": "",
+        "operationId": "getLecturer",
+        "parameters": [
+          {
+            "name": "LecturerID",
+            "in": "path",
+            "description": "Returns 1 Lecturer",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Lecturer"
+              }
+            },
+            "description": "finish"
+          }
+        }
+      }
+    },
+    "/UpdateLecturer/{LecturerID}": {
+      "patch": {
+        "tags": [
+          "Lecturer"
+        ],
+        "summary": "Update Lecturer",
+        "description": "",
+        "operationId": "UpdateLecturer",
+        "parameters": [
+          {
+            "name": "LecturerID",
+            "in": "path",
+            "description": "Returns 1 Lecturer",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Updatefinish"
+          }
+        }
+      }
+    },
+    "/DeleteLecturer/{LecturerID}": {
+      "delete": {
+        "tags": [
+          "Lecturer"
+        ],
+        "summary": "Delete Lecturer",
+        "description": "",
+        "operationId": "DeleteLecturer",
+        "parameters": [
+          {
+            "name": "LecturerID",
+            "in": "path",
+            "description": "Returns 1 Lecturer",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Deletefinish"
+          }
+        }
+      }
+    },
+    "/AddCourse": {
+      "post": {
+        "tags": [
+          "Course"
+        ],
+        "summary": "Add new Course",
+        "description": "",
+        "operationId": "addCourse",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Course"
+            }
+          }
+        ],
+        "responses": {
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/getCourse/{CourseID}": {
+      "get": {
+        "tags": [
+          "Course"
+        ],
+        "summary": "Get Course",
+        "description": "",
+        "operationId": "getCourse",
+        "parameters": [
+          {
+            "name": "CourseID",
+            "in": "path",
+            "description": "Returns 1 Course",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Course"
+              }
+            },
+            "description": "finish"
+          }
+        }
+      }
+    },
+    "/UpdateCourse/{CourseID}": {
+      "patch": {
+        "tags": [
+          "Course"
+        ],
+        "summary": "Update Course",
+        "description": "",
+        "operationId": "UpdateCourse",
+        "parameters": [
+          {
+            "name": "CourseID",
+            "in": "path",
+            "description": "Returns 1 Course",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Updatefinish"
+          }
+        }
+      }
+    },
+    "/DeleteCourse/{CourseID}": {
+      "delete": {
+        "tags": [
+          "Course"
+        ],
+        "summary": "Delete Course",
+        "description": "",
+        "operationId": "DeleteCourse",
+        "parameters": [
+          {
+            "name": "CourseID",
+            "in": "path",
+            "description": "Returns 1 Course",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Deletefinish"
+          }
+        }
+      }
+    },
+    "/AddStudentToCourse": {
+      "post": {
+        "tags": [
+          "Course"
+        ],
+        "summary": "Add Student to Course",
+        "description": "",
+        "operationId": "addStudentToCourse",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Student"
+            }
+          }
+        ],
+        "responses": {
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/AddGrade": {
+      "post": {
+        "tags": [
+          "Grade"
+        ],
+        "summary": "Add Grade",
+        "description": "",
+        "operationId": "addGrade",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Grade"
+            }
+          }
+        ],
+        "responses": {
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/getGrade/{GradeID}": {
+      "get": {
+        "tags": [
+          "Grade"
+        ],
+        "summary": "Get Grade",
+        "description": "",
+        "operationId": "getGrade",
+        "parameters": [
+          {
+            "name": "GradeID",
+            "in": "path",
+            "description": "Returns Grade student's",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Grade"
+              }
+            },
+            "description": "finish"
+          }
+        }
+      }
+    },
+    "/UpdateGrade/{GradeID}": {
+      "patch": {
+        "tags": [
+          "Grade"
+        ],
+        "summary": "Grading",
+        "description": "",
+        "operationId": "Grading",
+        "parameters": [
+          {
+            "name": "GradeID",
+            "in": "path",
+            "description": "Returns 1 Grade",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Updatefinish"
+          }
+        }
+      }
+    },
+    "/AddDebt": {
+      "post": {
+        "tags": [
+          "Finance"
+        ],
+        "summary": "Add Debt",
+        "description": "",
+        "operationId": "addDebt",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Finance"
+            }
+          }
+        ],
+        "responses": {
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/payDebt/{FinanceID}": {
+      "patch": {
+        "tags": [
+          "Finance"
+        ],
+        "summary": "Pay Debt",
+        "description": "",
+        "operationId": "PayDebt",
+        "parameters": [
+          {
+            "name": "FinanceID",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "payed"
+          }
+        }
+      }
+    },
+    "/getDebt/{FinanceID}": {
+      "get": {
+        "tags": [
+          "Finance"
+        ],
+        "summary": "Get Debt",
+        "description": "",
+        "operationId": "getDebt",
+        "parameters": [
+          {
+            "name": "FinanceID",
+            "in": "path",
+            "description": "Returns Debt student",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Grade"
+              }
+            },
+            "description": "finish"
+          }
+        }
+      }
+    },
+    "/AddEvaluation": {
+      "post": {
+        "tags": [
+          "Evaluation"
+        ],
+        "summary": "Add Evaluation",
+        "description": "",
+        "operationId": "addEvaluation",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Evaluation"
+            }
+          }
+        ],
+        "responses": {
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/Evaluation/{EvaluationID}": {
+      "patch": {
+        "tags": [
+          "Evaluation"
+        ],
+        "summary": "Do Evaluation",
+        "description": "",
+        "operationId": "DoEvaluation",
+        "parameters": [
+          {
+            "name": "EvaluationID",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "finish"
+          }
+        }
+      }
+    },
+    "/getEvaluation/{EvaluationID}": {
+      "get": {
+        "tags": [
+          "Evaluation"
+        ],
+        "summary": "Get Evaluation",
+        "description": "",
+        "operationId": "getEvaluation",
+        "parameters": [
+          {
+            "name": "EvaluationID",
+            "in": "path",
+            "description": "Returns Evaluation",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Evaluation"
+              }
+            },
+            "description": "finish"
+          }
+        }
+      }
+    },
+    "/AddForum": {
+      "post": {
+        "tags": [
+          "Forum"
+        ],
+        "summary": "Add new Forum",
+        "description": "",
+        "operationId": "addForum",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Forum"
+            }
+          }
+        ],
+        "responses": {
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/getForum/{ForumID}": {
+      "get": {
+        "tags": [
+          "Forum"
+        ],
+        "summary": "Get Forum",
+        "description": "",
+        "operationId": "getForum",
+        "parameters": [
+          {
+            "name": "ForumID",
+            "in": "path",
+            "description": "Returns Forum",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Forum"
+              }
+            },
+            "description": "finish"
+          }
+        }
+      }
+    },
+    "/UpdateForum/{ForumID}": {
+      "patch": {
+        "tags": [
+          "Forum"
+        ],
+        "summary": "Update Forum",
+        "description": "",
+        "operationId": "UpdateForum",
+        "parameters": [
+          {
+            "name": "ForumID",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Updatefinish"
+          }
+        }
+      }
+    },
+    "/DeleteForum/{ForumID}": {
+      "delete": {
+        "tags": [
+          "Forum"
+        ],
+        "summary": "Delete Forum",
+        "description": "",
+        "operationId": "DeleteForum",
+        "parameters": [
+          {
+            "name": "ForumID",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Deletefinish"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Student": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "years": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "Major": {
+          "type": "string",
+          "format": ""
+        },
+        "Course": {
+          "$ref": "#/definitions/Course"
+        }
+      },
+      "xml": {
+        "name": "Student"
+      }
+    },
+    "Lecturer": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Major": {
+          "type": "string",
+          "format": ""
+        },
+        "Course": {
+          "$ref": "#/definitions/Course"
+        }
+      }
+    },
+    "Course": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "years": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "Major": {
+          "type": "string",
+          "format": ""
+        },
+        "Lecturer": {
+          "$ref": "#/definitions/Lecturer"
+        },
+        "Student": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Student"
+          }
+        }
+      }
+    },
+    "Grade": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Course": {
+          "$ref": "#/definitions/Course"
+        },
+        "score": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Student": {
+          "$ref": "#/definitions/Student"
+        }
+      }
+    },
+    "Finance": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Debt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Student": {
+          "$ref": "#/definitions/Student"
+        }
+      }
+    },
+    "Evaluation": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Feedgack": {
+          "type": "string",
+          "format": ""
+        },
+        "score": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Lecturer": {
+          "$ref": "#/definitions/Lecturer"
+        }
+      }
+    },
+    "Forum": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "type": "string",
+          "format": ""
+        },
+        "Knowledge": {
+          "type": "string",
+          "format": ""
+        },
+        "author": {
+          "type": "string",
+          "format": ""
+        }
+      }
+    }
+  }
+}
