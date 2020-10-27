@@ -29,7 +29,7 @@ public class App {
     public static void main( String[] args ) {
         SpringApplication.run(App.class, args);
     }
-    @RequestMapping(value="/dashboard", method = RequestMethod.GET)
+    @RequestMapping(value="/instance", method = RequestMethod.GET)
     @ResponseBody
     private String hello() {
     	 
