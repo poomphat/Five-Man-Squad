@@ -37,24 +37,24 @@
       var StatusUp = []
      
         const api = async () => {
-            const req = await fetch('http://localhost:8761/eureka/apps/',{
+            const n = await fetch('http://localhost:8761/eureka/apps/',{
                 method: 'GET',
                 headers:{
                     Accept:'application/json',
                     "Content-Type":'application/json',
                 }
             })
-            const res = await req.json()
+            const data = await n.json()
             const count = 0
-            for(let j = 0;j<res.applications.application.length;j++){
-              StatusUp.push(res.applications.application[j].name);
-              console.log(res.applications.application.length)
+            for(let j = 0;j<data.applications.application.length;j++){
+              StatusUp.push(data.applications.application[j].name);
+              console.log(data.applications.application.length)
             }
 
-            for(let i = 0;i<res.applications.application.length;i++){
-                  console.log("box"+res.applications.application[i].name);
-                  document.getElementById("box"+res.applications.application[i].name).style.backgroundColor = "#99ff66"; 
-                  document.getElementById("status"+res.applications.application[i].name).innerHTML = "Status : UP"; 
+            for(let i = 0;i<data.applications.application.length;i++){
+                  console.log("box"+data.applications.application[i].name);
+                  document.getElementById("box"+data.applications.application[i].name).style.backgroundColor = "#99ff66"; 
+                  document.getElementById("status"+data.applications.application[i].name).innerHTML = "Status : UP"; 
 
                   }
               
